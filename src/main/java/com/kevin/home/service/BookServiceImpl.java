@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService{
 	
 	@Override
 	public Book updateBook(Long id, Book book) {
-		Book bookSave = bookRes.findById(id).orElseThrow();
+		Book bookSave = bookRes.findById(id).orElseThrow(null);
 		BeanUtils.copyProperties(book, bookSave, getNullPropertyNames(book));
 		return bookRes.save(bookSave);
 	}
