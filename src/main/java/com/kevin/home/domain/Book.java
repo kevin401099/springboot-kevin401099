@@ -24,6 +24,17 @@ public class Book extends MasterDomain{
 	@Column (name = "no_pages")
 	@Comment("Number of pages")
 	private Integer noOfPages;
+	
+	public Book() {
+	}
+
+	public Book(Long id, String bookname, String firstname, String lastname, Integer noOfPages) {
+		setId(id);
+		setBookname(bookname);
+		setAuthorFirstname(firstname);
+		setAuthorLastname(lastname);
+		setNoOfPages(noOfPages);
+	}
 
 	public String getBookname() {
 		return bookname;
